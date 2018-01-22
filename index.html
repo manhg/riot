@@ -1,0 +1,20 @@
+<x-hello name="RiotJS hot reloader"></x-hello>
+
+<x-tag1></x-tag1>
+<x-tag2></x-tag2>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.8.1/riot.min.js"></script>
+<script src="https://unpkg.com/riot-hot-reload@1.0.0/index.js"></script>
+
+<!-- 1 tag per file -->
+<script src="hello.tag.js"></script>
+
+<!-- multi tags in one file, need to tell which to reload -->
+<script src="multi.tag.js" data-tagdef='x-tag1,x-tag2'></script>
+
+<script src="riot-livereload-plugins.coffee.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    riot.mount('*');
+});
+</script>
